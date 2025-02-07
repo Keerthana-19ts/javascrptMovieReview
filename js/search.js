@@ -9,9 +9,10 @@ function displayMovies(movies) {
 
     movies.forEach(movie => {
         const card = `
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="${movie.imageURL}" class="card-img-top" alt="${movie.title}">
+            <div class="col-md-4" onclick="showMovieDetails(${movie.id})">
+                <div class="card mb-4" id="outer">
+                    <div><img src="${movie.imageURL}" class="card-img-top" alt="${movie.title}">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">${movie.title}</h5>
                         <p class="card-text">${movie.plot}</p>
@@ -23,6 +24,35 @@ function displayMovies(movies) {
     });
 }
 
+function showMovieDetails(movieId) {
+    const movies = JSON.parse(localStorage.getItem("movies")) || [];
+    const movie = movies.find(m => m.id === movieId);
+
+    if (movie) {
+        const container = document.getElementById("movie-card-container");
+        container.innerHTML = `
+            <div class="card mb-4">
+                <img src="${movie.imageURL}" class="card-img-top" alt="${movie.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${movie.title}</h5>
+                    <p class="card-text"><strong>Director:</strong> ${movie.director}</p>
+                    <p class="card-text"><strong>Plot:</strong> ${movie.plot}</p>
+                    <p class="card-text"><strong>Year:</strong> ${movie.year}</p>
+                    <p class="card-text"><strong>Genre:</strong> ${movie.genre.join(", ")}</p>
+                    <p class="card-text"><strong>Box Office:</strong> ${movie.boxOffice}</p>
+                    <p class="card-text"><strong>Actors:</strong> ${movie.actors.join(", ")}</p>
+                    <button class="btn btn-primary" onclick="goBack()">Back</button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+function goBack() {
+    window.location = "page1.html"; // Redirect to page1.html
+}
+
+// The rest of your existing code remains unchanged
 
 
 function searchMovie() {

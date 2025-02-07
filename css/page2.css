@@ -4,9 +4,36 @@ body {
 .card-body {
     background-color: transparent;
     color: #fff; 
-    height: 250px;
+    
 }
 .card-img-top {
     height: 400px;
-    
+}
+
+#outer{
+    display: flex;
+}
+
+.card {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding: 15px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    transition: box-shadow 0.3s; /* Smooth shadow transition */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.card img {
+    width: 150px; /* Fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.card-body {
+    flex: 1; /* Allow the text area to take up remaining space */
 }

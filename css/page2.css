@@ -16,24 +16,24 @@ body {
 
 .card {
     display: flex;
-    align-items: center; /* Center items vertically */
-    padding: 15px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a border */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #fff; /* White background */
-    transition: box-shadow 0.3s; /* Smooth shadow transition */
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: box-shadow 0.3s;
 }
 
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
-    width: 150px; /* Fixed width for the image */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between image and text */
+    width: 150px;
+    height: auto;
+    margin-right: 15px;
 }
 
 .card-body {
-    flex: 1; /* Allow the text area to take up remaining space */
+    flex: 1;
 }

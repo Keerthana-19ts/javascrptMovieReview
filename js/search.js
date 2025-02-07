@@ -1,9 +1,9 @@
 function displayMovies(movies) {
     const container = document.getElementById("movie-card-container");
-    container.innerHTML = ""; // Clear previous content
+    container.innerHTML = ""; 
 
     if (movies.length === 0) {
-        container.innerHTML = "<p style='color: white;'>No movies found.</p>"; // Show message if no movies match
+        container.innerHTML = "<p style='color: white;'>No movies found.</p>"; 
         return;
     }
 
@@ -49,10 +49,10 @@ function showMovieDetails(movieId) {
 }
 
 function goBack() {
-    window.location = "page1.html"; // Redirect to page1.html
+    window.location = "page1.html"; 
 }
 
-// The rest of your existing code remains unchanged
+
 
 
 function searchMovie() {
@@ -60,32 +60,32 @@ function searchMovie() {
     const movies = JSON.parse(localStorage.getItem("movies")) || [];
     
     const container = document.getElementById("movie-card-container");
-    container.innerHTML = ""; // Clear previous content
+    container.innerHTML = ""; 
 
-    // Check if the query is empty
+    
     if (query === "") {
-        container.innerHTML = "<p style='color: white;'>Please enter a movie name.</p>"; // Show prompt to enter a movie name
+        container.innerHTML = "<p style='color: white;'>Please enter a movie name.</p>"; 
         return;
     }
 
     const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(query));
 
     if (filteredMovies.length === 0) {
-        container.innerHTML = "<p style='color: white;'>No movies found.</p>"; // Show message if no movies match
+        container.innerHTML = "<p style='color: white;'>No movies found.</p>"; 
     } else {
         displayMovies(filteredMovies); 
     }
 }
 
-// Call this function on page load to check for a search query
+
 function checkForSearchQuery() {
     const query = localStorage.getItem("searchQuery");
     if (query) {
-        document.getElementById("search-box").value = query; // Set the search box value
-        searchMovie(); // Call searchMovie to display results
-        localStorage.removeItem("searchQuery"); // Clear the search query from local storage
+        document.getElementById("search-box").value = query; 
+        searchMovie(); 
+        localStorage.removeItem("searchQuery"); 
     }
 }
 
-// Call this function when the page loads
+
 window.onload = checkForSearchQuery;

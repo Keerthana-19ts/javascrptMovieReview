@@ -1,6 +1,6 @@
 
   function displayMovies() {
-    // Retrieve movies from localStorage
+    
     const movies = JSON.parse(localStorage.getItem("movies"));
 
     let data = "<table><tr><th>Title</th><th>Image</th></tr>";
@@ -11,11 +11,11 @@
     document.getElementById("data").innerHTML = data;
 }
 
-// Call displayMovies to show the data when the page loads
+
 window.onload = function () {
-    // Check if movies data is already in localStorage
+    
     if (!localStorage.getItem("movies")) {
-        // Store movies data if not already present
+        
         const movies = [
             {
               id: 1,
@@ -75,6 +75,6 @@ window.onload = function () {
           ];
         localStorage.setItem("movies", JSON.stringify(movies));
     }
-    displayMovies(); // Call the function to display movies
+    displayMovies(); 
 };
 

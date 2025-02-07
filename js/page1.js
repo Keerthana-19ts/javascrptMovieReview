@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 // localStorage.js
->>>>>>> 6256ce4f3f0cb91d2b5b687994ce3270071db3fe
 document.getElementById('search-box').addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
         const searchTerm = this.value.trim();
@@ -9,10 +6,6 @@ document.getElementById('search-box').addEventListener('keyup', function(event) 
             localStorage.setItem('searchTerm', searchTerm);
             window.location.href = './page2.html'; // Redirect to page2.html
         } else {
-<<<<<<< HEAD
-            alert("Please enter a movie name to search."); // Alert if search box is empty
-        }
-=======
           alert("Please enter a movie name to search."); // Alert if search box is empty
         }
  
@@ -67,7 +60,6 @@ document.getElementById('search-box').addEventListener('keyup', function(event) 
         });
     } else {
         resultsContainer.innerHTML = "<p>No results found.</p>";
->>>>>>> 6256ce4f3f0cb91d2b5b687994ce3270071db3fe
     }
   }
  

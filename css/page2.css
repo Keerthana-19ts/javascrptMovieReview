@@ -1,0 +1,7 @@
+body {
+    background-color: black !important;
+}
+.card-body {
+    background-color: transparent;
+    color: #fff; /* Optional: Change text color to white for better visibility on dark backgrounds */
+}

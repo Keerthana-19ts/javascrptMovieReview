@@ -37,6 +37,7 @@ window.onload = function () {
               genre: ["Action", "Drama", "Fantasy"],
               boxOffice: "₹1810 crore",
               actors: ["Prabhas", "Rana Daggubati", "Anushka Shetty", "Tamannaah", "Sathyaraj"],
+              imageURL: "/image/bahubali2.jpg"
             },
             {
               id: 3,
@@ -46,7 +47,8 @@ window.onload = function () {
               year: 2018,
               genre: ["Action", "Crime", "Drama"],
               boxOffice: "₹250 crore",
-              actors: ["Yash", "Srinidhi Shetty", "Ramachandra Raju", "Anant Nag"]
+              actors: ["Yash", "Srinidhi Shetty", "Ramachandra Raju", "Anant Nag"],
+               imageURL: "/image/kgf1.jpg"
             },
             {
               id: 4,
@@ -56,7 +58,8 @@ window.onload = function () {
               year: 2022,
               genre: ["Action", "Crime", "Drama"],
               boxOffice: "₹1250 crore",
-              actors: ["Yash", "Sanjay Dutt", "Srinidhi Shetty", "Raveena Tandon", "Prakash Raj"]
+              actors: ["Yash", "Sanjay Dutt", "Srinidhi Shetty", "Raveena Tandon", "Prakash Raj"],
+              imageURL: "/image/kgf2.jpg"
             },
             {
               id: 5,
@@ -66,7 +69,8 @@ window.onload = function () {
               year: 2022,
               genre: ["Action", "Thriller", "Drama"],
               boxOffice: "₹400 crore",
-              actors: ["Rishab Shetty", "Sapthami Gowda", "Kishore", "Achyuth Kumar"]
+              actors: ["Rishab Shetty", "Sapthami Gowda", "Kishore", "Achyuth Kumar"],
+              imageURL: "/image/kantara.jpg"
             }
           ];
         localStorage.setItem("movies", JSON.stringify(movies));

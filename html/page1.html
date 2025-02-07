@@ -12,7 +12,7 @@
     <header>
         <a href="./page1.html">Movie Browser</a>
         <div class="search-container">
-            <input type="text" id="search-box" placeholder="Search for a movie...">
+            <input type="text" id="search-box" placeholder="Search for a movie..."oninput="searchMovie()">
         </div>
     </header>
 
@@ -51,8 +51,10 @@
         </div>
     </div>
 
-    <div id="movie-results"></div>
-
+    <div id="movie-card-container" class="row"></div>
+    
+    <script src="/js/page1.js"></script>
+    <script src="/js/search.js"></script>
     <script src="/js/localStorage.js"></script>
 </body>
 </html>

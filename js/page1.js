@@ -1,31 +1,65 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const searchBox = document.getElementById('search-box');
-    const searchButton = document.getElementById('search-button');
-    const resultsContainer = document.getElementById('results-container');
-
-    searchButton.addEventListener('click', () => {
-        const searchTerm = searchBox.value;
-        // Simulate fetching movie data (replace with actual API call)
-        const results = searchMovies(searchTerm);
-        displayResults(results);
-    });
-
-    function searchMovies(term) {
-        // Replace with actual API call or data source lookup
-        // This is a placeholder
-        return [
-            { title: 'Movie Title 1', year: 2020 },
-            { title: 'Movie Title 2', year: 2022 },
-        ];
-    }
-
-    function displayResults(movies) {
-        resultsContainer.innerHTML = ''; // Clear previous results
-        movies.forEach(movie => {
-            const resultDiv = document.createElement('div');
-            resultDiv.classList.add('movie-result');
-            resultDiv.innerHTML = `<h3>${movie.title}</h3><p>Year: ${movie.year}</p>`;
-            resultsContainer.appendChild(resultDiv);
-        });
+// localStorage.js
+document.getElementById('search-box').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        const searchTerm = this.value.trim();
+        if (searchTerm !== "") { // Check if search term is not empty
+            localStorage.setItem('searchTerm', searchTerm);
+            window.location.href = './page2.html'; // Redirect to page2.html
+        } else {
+          alert("Please enter a movie name to search."); // Alert if search box is empty
+        }
+ 
     }
 });
+ 
+ 
+//  You'll need to retrieve the search term on page2.html
+ 
+// page2.html (add this script at the end of the <body>)
+ 
+  const searchTerm = localStorage.getItem('searchTerm');
+ 
+  if (searchTerm) {
+      // Use the searchTerm to fetch movie data (e.g., from an API)
+      console.log("Searching for:", searchTerm);
+      // Example using fetch (replace with your actual API call)
+      fetch(`YOUR_API_ENDPOINT?query=${searchTerm}`)  // Replace YOUR_API_ENDPOINT
+        .then((response) => response.json())
+        .then(data => {
+            // Display movie results on page 2
+            displayResults(data); // You'll need to define this function
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+            // Handle error (e.g., display an error message)
+        });
+ 
+      localStorage.removeItem('searchTerm'); // Clear from local storage after use (optional)
+  } else {
+    // Handle the case where there is no search term (e.g., if the user came to page2 directly)
+    console.log("No search term found.");
+    // You might want to redirect the user back to page1 or display a message
+    // window.location.href = './page1.html';
+  }
+ 
+  function displayResults(data) {
+    // Implement your logic to display the movie results on page2.html
+    const resultsContainer = document.getElementById("movie-results"); // Make sure you have this element in page2.html
+    resultsContainer.innerHTML = ""; // Clear previous results
+ 
+    if (data.results && data.results.length > 0) { // Check if there are results
+        data.results.forEach(movie => {
+            const movieDiv = document.createElement("div");
+            movieDiv.classList.add("movie-result");
+            movieDiv.innerHTML = `
+                <img src="YOUR_IMAGE_API_ENDPOINT/${movie.poster_path}" alt="${movie.title}">  </img>
+                <h3>${movie.title}</h3>
+                <p>${movie.overview}</p>
+                `;
+            resultsContainer.appendChild(movieDiv);
+        });
+    } else {
+        resultsContainer.innerHTML = "<p>No results found.</p>";
+    }
+  }
+ 

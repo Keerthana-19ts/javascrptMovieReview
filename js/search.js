@@ -23,6 +23,8 @@ function displayMovies(movies) {
     });
 }
 
+
+
 function searchMovie() {
     const query = document.getElementById("search-box").value.toLowerCase();
     const movies = JSON.parse(localStorage.getItem("movies")) || [];
@@ -44,3 +46,16 @@ function searchMovie() {
         displayMovies(filteredMovies); 
     }
 }
+
+// Call this function on page load to check for a search query
+function checkForSearchQuery() {
+    const query = localStorage.getItem("searchQuery");
+    if (query) {
+        document.getElementById("search-box").value = query; // Set the search box value
+        searchMovie(); // Call searchMovie to display results
+        localStorage.removeItem("searchQuery"); // Clear the search query from local storage
+    }
+}
+
+// Call this function when the page loads
+window.onload = checkForSearchQuery;

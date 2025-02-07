@@ -3,10 +3,13 @@
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background-color: rgb(42, 40, 37);
         }
     
+       div{
+        color: white;
+       }
        
-    
         .author-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -22,11 +25,12 @@
     
         .author img {
             width: 200px;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
             border-radius: 5px 5px 0 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
+            border: 1px solid #ccc;
         }
     
         .author img:hover {

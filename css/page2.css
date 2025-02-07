@@ -3,5 +3,10 @@ body {
 }
 .card-body {
     background-color: transparent;
-    color: #fff; /* Optional: Change text color to white for better visibility on dark backgrounds */
+    color: #fff; 
+    height: 250px;
+}
+.card-img-top {
+    height: 400px;
+    
 }

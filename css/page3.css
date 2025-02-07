@@ -1,0 +1,20 @@
+.movie-browser{
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+}
+.movie-browser img{
+    margin-left: 30%;
+    width: 300px;
+    height: 500px;
+    border-radius: 8px;
+    border: 2px solid grey;
+    margin-top: 10px;
+}
+body{
+    background-color: black;
+}
+.back{
+    color: white;
+    text-decoration: none;
+}

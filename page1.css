@@ -3,12 +3,33 @@
             font-family: sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
         }
     
-       div{
-        color: white;
-       }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+    
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+    
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+    
+        #search-box {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
     
         .author-container {
             display: grid;
@@ -30,7 +51,6 @@
             border-radius: 5px 5px 0 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
-            border: 1px solid #ccc;
         }
     
         .author img:hover {
@@ -72,4 +92,4 @@
         .movie-result h3 {
             margin-top: 0;
         }
-   
+    
